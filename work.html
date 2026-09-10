@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Project Breakdown</title>
+<meta name="description" content="Project case breakdown: problem, role, tech stack, results, and build steps." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { paper:'#FFFBF5', ink:'#1C1410', muted:'#78716C', accent:'#C2410C', card:'#FFFFFF', line:'#E9E0D6' },
+  fontFamily: { sans:['ui-sans-serif','system-ui','Segoe UI','Roboto','sans-serif'] }
+}}}
+</script>
+<style>
+  body{background:#FFFBF5;color:#1C1410;}
+  a,button{min-height:44px;}
+  a:focus-visible,button:focus-visible{outline:2px dashed #C2410C;outline-offset:3px;border-radius:8px;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease-out,transform .5s ease-out;}
+  .reveal.in{opacity:1;transform:none;}
+  #perfbar{transition:width 1s ease-out;}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body class="font-sans antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:bg-white focus:px-3 focus:py-2 focus:border focus:rounded-lg">Skip to breakdown</a>
+
+<header class="sticky top-0 z-20 bg-paper/90 backdrop-blur border-b border-line">
+  <nav aria-label="Navigation" class="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-2">
+    <a href="index.html" class="py-2 font-bold">CHOIRUL<span class="text-accent">.games</span> <span class="block text-[11px] font-normal text-muted">Game developer for hire • Unity</span></a>
+    <div class="flex items-center gap-1 text-sm">
+      <a href="index.html#works" class="px-3 py-2 rounded-full hover:bg-white border border-transparent hover:border-line">Gallery</a>
+      <a href="index.html#experience" class="px-3 py-2 rounded-full hover:bg-white border border-transparent hover:border-line">Experience</a>
+      <a href="assets/cv.pdf" download class="px-3 py-2 rounded-full border border-line bg-white font-semibold">CV ⬇</a>
+      <a href="https://wa.me/6282226551246" class="ml-1 bg-ink text-white px-4 py-2 rounded-full font-semibold inline-flex items-center text-sm">Chat Client</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="mx-auto max-w-6xl px-4 pb-10">
+  <p class="mt-6 text-sm"><a href="index.html#works" class="text-accent font-semibold py-1">← Back to gallery</a></p>
+  <div id="content"></div>
+</main>
+
+<footer class="border-t border-line mt-4">
+  <div class="mx-auto max-w-6xl px-4 py-5 text-xs text-muted flex flex-col sm:flex-row justify-between gap-1">
+    <p>© 2026 Muhammad Choirul Anwar</p><p id="credit">choirul32anwar@gmail.com • goldfire32.itch.io</p>
+  </div>
+</footer>
+<script src="data/projects.js"></script>
+<script>
+const slug = new URLSearchParams(location.search).get("p");
+const x = PROJECTS.find(p => p.slug === slug);
+const box = document.getElementById("content");
+if (!x) {
+  document.title = "Project not found";
+  box.innerHTML = `<div class="mt-8 border border-line bg-card rounded-2xl p-8 text-center">
+    <h1 class="text-2xl font-bold">Couldn't load this project</h1>
+    <p class="text-sm text-muted mt-2">This usually means the page was opened as a file instead of through the site. Serve the folder (<span class="font-mono">npx serve .</span>) and open it again, or pick a project below.</p>
+    <a href="index.html#works" class="inline-block mt-4 bg-ink text-white px-5 py-2.5 rounded-full text-sm font-semibold">Back to gallery</a></div>`;
+} else {
+  document.title = x.j + " — Breakdown";
+  const badges = x.badges.map(b => `<span class="bg-white border border-line px-2 py-1 rounded-full">${b}</span>`).join("");
+  const video = x.youtubeId
+    ? `<div class="aspect-video w-full overflow-hidden rounded-xl bg-black"><iframe class="h-full w-full" src="https://www.youtube.com/embed/${x.youtubeId}" title="${x.j} video" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`
+    : `<div class="relative rounded-xl overflow-hidden bg-black"><img src="${x.img}" alt="${x.j} thumbnail" class="w-full aspect-video object-cover" loading="eager" /><span class="absolute top-2 left-2 text-[11px] font-bold bg-black/70 text-white px-2 py-1 rounded-full">${x.tag}</span></div>`;
+  const localVideos = x.videos && x.videos.length ? `<h2 class="text-2xl font-bold mt-10">Gameplay Clips</h2><div class="mt-3 grid sm:grid-cols-2 gap-3 reveal">${x.videos.map(v => `<figure class="bg-card border border-line rounded-2xl overflow-hidden"><video class="w-full aspect-video bg-black" controls preload="metadata" src="${v.src}"></video><figcaption class="p-3 text-xs text-muted">${v.label}</figcaption></figure>`).join("")}</div>` : "";
+  const buttons = x.buttons.map(b => `<a href="${b.href}" class="${b.primary ? "bg-ink text-white" : "bg-white border border-line"} px-5 py-2.5 rounded-full font-semibold">${b.label}</a>`).join("");
+  const ba = x.beforeAfter.length ? `<h2 class="text-2xl font-bold mt-10">Before / After</h2><div class="mt-3 grid sm:grid-cols-2 gap-3 reveal">${x.beforeAfter.map(b => `<figure class="bg-card border border-line rounded-2xl overflow-hidden"><img src="${b.img}" alt="${b.alt}" class="w-full aspect-video object-cover" loading="lazy" /><figcaption class="p-3 text-xs text-muted">${b.caption}</figcaption></figure>`).join("")}</div>` : "";
+  const shots = x.shots.length ? `<h2 class="text-2xl font-bold mt-10">Cinematic Story — Shooting Script</h2><p class="text-sm text-muted mt-1">How the story is told — note the signature first-person POV shot.</p><div class="mt-3 overflow-x-auto border border-line rounded-2xl bg-card reveal"><table class="w-full text-sm"><thead class="bg-stone-100 text-left"><tr><th class="p-2">No</th><th class="p-2">Camera</th><th class="p-2">Action</th><th class="p-2">Audio</th></tr></thead><tbody>${x.shots.map(s => `<tr class="border-t"><td class="p-2">${s.no}</td><td class="p-2">${s.kamera}</td><td class="p-2">${s.aksi}</td><td class="p-2">${s.audio}</td></tr>`).join("")}</tbody></table></div>` : "";
+  const steps = `<h2 class="text-2xl font-bold mt-10">Breakdown — ${x.steps.length} steps</h2><ol class="mt-3 grid gap-3 reveal">${x.steps.map((s, i) => `<li class="bg-card border border-line rounded-2xl p-4 grid sm:grid-cols-[48px_1fr] gap-3"><span class="w-12 h-12 rounded-full ${s.accent ? "bg-accent" : "bg-ink"} text-white grid place-items-center font-bold">${i + 1}</span><div><p class="font-bold">${s.title}</p><p class="text-sm text-muted mt-1">${s.body}</p>${s.mono ? `<p class="text-xs mt-2 font-mono">${s.mono}</p>` : ""}</div></li>`).join("")}</ol>`;
+  const perf = x.perf ? `<div class="mt-4 bg-ink text-white rounded-2xl p-5"><p class="text-xs font-bold tracking-widest text-stone-300">${x.perf.label}</p><p class="font-bold text-lg mt-1">${x.perf.value}</p><div class="mt-3 h-3 bg-stone-700 rounded-full overflow-hidden"><div id="perfbar" class="h-full w-0 bg-white rounded-full"></div></div><p class="text-xs text-stone-300 mt-2">${x.perf.note}</p></div>` : "";
+  const bySlug = s => PROJECTS.find(p => p.slug === s);
+  const gal = x.gallery && x.gallery.length ? `<h2 class="text-2xl font-bold mt-10">Screenshots</h2><div class="mt-3 grid sm:grid-cols-2 gap-3 reveal">${x.gallery.map(g => `<figure class="bg-card border border-line rounded-2xl overflow-hidden"><img src="${g.img}" alt="${g.alt}" class="w-full aspect-video object-cover" loading="lazy" /><figcaption class="p-3 text-xs text-muted">${g.caption}</figcaption></figure>`).join("")}</div>` : "";
+  const rel = `<h2 class="text-2xl font-bold mt-10">Related work</h2><div class="mt-3 grid sm:grid-cols-3 gap-3">${x.related.map(s => bySlug(s)).filter(Boolean).map(r => `<a href="work.html?p=${r.slug}" class="bg-card border border-line rounded-2xl overflow-hidden block"><img src="${r.img}" alt="${r.j} thumbnail" class="w-full aspect-video object-cover" loading="lazy" /><div class="p-3"><p class="font-bold text-sm">${r.j}</p><p class="text-xs text-muted">${r.h} • ${r.p}</p></div></a>`).join("")}</div>`;
+  if (x.credit) document.getElementById("credit").textContent = x.credit;
+  box.innerHTML = `
+    <div class="mt-2">
+      <div class="flex flex-wrap gap-2 text-[11px] font-bold"><span class="bg-ink text-white px-2 py-1 rounded-full">${klabel(x.k).toUpperCase()}</span>${badges}</div>
+      <h1 class="text-3xl sm:text-4xl font-bold mt-2">${x.j}</h1>
+      <p class="text-muted mt-1 text-sm sm:text-base">${x.subtitle}</p>
+      <p class="text-xs mt-2 font-mono text-muted">${x.roleLine}</p>
+    </div>
+    <div class="mt-4 bg-card border border-line rounded-2xl p-3">${video}<div class="mt-3 flex flex-wrap gap-2 text-sm">${buttons}</div></div>
+    <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm reveal">
+      <div class="bg-card border border-line rounded-2xl p-4"><p class="text-[11px] font-bold text-accent">PROBLEM</p><p class="mt-1">${x.problem}</p></div>
+      <div class="bg-card border border-line rounded-2xl p-4"><p class="text-[11px] font-bold text-accent">MY ROLE</p><p class="mt-1">${x.role}</p></div>
+      <div class="bg-card border border-line rounded-2xl p-4"><p class="text-[11px] font-bold text-accent">TECH STACK</p><p class="text-xs mt-1 font-mono">${x.tech}</p></div>
+      <div class="bg-card border border-line rounded-2xl p-4"><p class="text-[11px] font-bold text-accent">RESULT</p><p class="mt-1 font-bold">${x.result}</p></div>
+    </div>
+    ${ba}${shots}${steps}${perf}${gal}${localVideos}
+    <div class="mt-4 bg-card border border-line rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <p class="font-bold">${x.cta}</p>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <a href="https://wa.me/6282226551246" class="bg-ink text-white px-5 py-2.5 rounded-full font-semibold">Chat on WhatsApp</a>
+        <a href="mailto:choirul32anwar@gmail.com" class="border border-line bg-white px-5 py-2.5 rounded-full font-semibold">Ask for code sample</a>
+      </div>
+    </div>
+    ${rel}`;
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  const bar = document.getElementById("perfbar");
+  if (bar) new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { bar.style.width = x.perf.pct + "%"; o.disconnect(); } }), { threshold: 0.6 }).observe(bar);
+}
+</script>
+</body>
+</html>

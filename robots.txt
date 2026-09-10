@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://choirul-games.vercel.app/sitemap.xml

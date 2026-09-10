@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(python \"D:\\skill_coba\\Website Portofolio Game\\extract_cv.py\")",
+      "Shell(mkdir:*)",
+      "Shell(copy:*)",
+      "Shell(dir:*)",
+      "Shell(del:*)",
+      "Shell(node -e const fs=require('fs');const js=fs.readFileSync('data/projects.js','utf8');const names=['PROJECTS','klabel'];for(const n of names){if(!js.includes(n))throw new Error('missing '+n)}const count=(js.match(/slug:/g)||[]).length;console.log('projects:',count);const slugs=[...js.matchAll(/slug:\\s*\"([^\"]+)\"/g)].map(m=>m[1]);console.log('slugs:',slugs.join(','));const h=fs.readFileSync('index.html','utf8');for(const s of ['data/projects.js','work.html?p=','PROJECTS.filter'])if(!h.includes(s))throw new Error('index missing '+s);const w=fs.readFileSync('work.html','utf8');for(const s of ['data/projects.js','URLSearchParams','PROJECTS.find'])if(!w.includes(s))throw new Error('work missing '+s);console.log('template wiring OK'))",
+      "Shell(python extract_imgs.py)",
+      "Shell(python extract_save.py)",
+      "Shell(node verify.js)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Muhammad Choirul Anwar — Game Developer</title>
+<meta name="description" content="Unity game developer 5 years for hire: full games, gameplay systems, and game AI. 2D action, survival, idle, party, AR/VR. Android, PC." />
+<link rel="canonical" href="https://choirul-games.vercel.app/" />
+<meta name="theme-color" content="#FFFBF5" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Muhammad Choirul Anwar — Game Developer for Hire" />
+<meta property="og:description" content="I build games: full titles, gameplay systems, and living game AI. 13 projects — 2D action, survival, idle, party, AR/VR." />
+<meta property="og:url" content="https://choirul-games.vercel.app/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231C1410'/><text x='50' y='68' font-size='48' text-anchor='middle' fill='%23FFFBF5' font-family='sans-serif' font-weight='bold'>C</text></svg>" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { paper:'#FFFBF5', ink:'#1C1410', muted:'#78716C', accent:'#C2410C', accentdark:'#7C2D12', card:'#FFFFFF', line:'#E9E0D6' },
+  fontFamily: { sans:['ui-sans-serif','system-ui','Segoe UI','Roboto','sans-serif'] }
+}}}
+</script>
+<style>
+  body{background:#FFFBF5;color:#1C1410;}
+  a,button{min-height:44px;}
+  a:focus-visible,button:focus-visible{outline:2px dashed #C2410C;outline-offset:3px;border-radius:8px;}
+  .thumb{transition:transform .35s ease-out;}
+  .card:hover .thumb{transform:scale(1.05);}
+  .card{transition:transform .25s ease-out, box-shadow .25s ease-out;}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 32px -12px rgba(28,20,16,.25);}
+  .enter{opacity:0;transform:translateY(12px) scale(.98);animation:in .45s ease-out forwards;}
+  @keyframes in{to{opacity:1;transform:none;}}
+  .skeleton{position:relative;overflow:hidden;background:#E9E0D6;}
+  .skeleton::after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);animation:sh 1s infinite;}
+  @keyframes sh{to{transform:translateX(100%);}}
+  .strip{scrollbar-width:thin;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease-out,transform .5s ease-out;}
+  .reveal.in{opacity:1;transform:none;}
+  #lightbox{transition:opacity .25s ease-out;}
+  #lightbox.hide{opacity:0;pointer-events:none;}
+  #lightbox .box{transition:transform .25s ease-out;}
+  #lightbox.hide .box{transform:scale(.96) translateY(8px);}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body class="font-sans antialiased">
+<a href="#works" class="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:bg-white focus:px-3 focus:py-2 focus:border focus:rounded-lg">Skip to gallery</a>
+
+<header class="sticky top-0 z-20 bg-paper/90 backdrop-blur border-b border-line">
+  <nav aria-label="Navigation" class="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-2">
+    <a href="#top" class="py-2 font-bold">CHOIRUL<span class="text-accent">.games</span> <span class="block text-[11px] font-normal text-muted">Game developer for hire • Unity</span></a>
+    <div class="flex items-center gap-1 text-sm">
+      <a href="#works" class="px-3 py-2 rounded-full hover:bg-white border border-transparent hover:border-line">Gallery</a>
+      <a href="#experience" class="px-3 py-2 rounded-full hover:bg-white border border-transparent hover:border-line">Experience</a>
+      <a href="#services" class="px-3 py-2 rounded-full hover:bg-white border border-transparent hover:border-line">Services</a>
+      <a href="assets/cv.pdf" download class="px-3 py-2 rounded-full border border-line bg-white font-semibold">CV ⬇</a>
+      <a href="https://wa.me/6282226551246" class="ml-1 bg-ink text-white px-4 py-2 rounded-full font-semibold inline-flex items-center text-sm">Chat Client</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top" class="mx-auto max-w-6xl px-4">
+  <!-- HERO -->
+  <section class="py-8 sm:py-10 grid lg:grid-cols-2 gap-5 items-stretch">
+    <div>
+      <div class="flex items-center gap-3 bg-card border border-line rounded-2xl p-3 max-w-md">
+        <img src="assets/profil-game.jpg" alt="Muhammad Choirul Anwar profile photo" class="w-16 h-16 rounded-full object-cover border-2 border-accent bg-line" loading="eager" onerror="this.outerHTML='<div class=\'w-16 h-16 rounded-full bg-line grid place-items-center font-bold text-accent\'>MCA</div>'" />
+        <div>
+          <p class="font-bold leading-tight">Hi, I'm Muhammad Choirul Anwar</p>
+          <p class="text-xs text-muted">Game Developer for hire • Unity / Gameplay / Game AI</p>
+          <p class="mt-1 inline-block text-[11px] font-bold bg-ink text-white px-2 py-0.5 rounded-full">● OPEN — Lampung, Indonesia / Remote</p>
+        </div>
+      </div>
+      <p class="text-xs font-bold tracking-widest text-accent mt-4">FOR HIRE • FULL GAMES &amp; GAMEPLAY SYSTEMS</p>
+      <h1 class="text-3xl sm:text-5xl font-bold leading-[1.1] mt-2">I build games — from first prototype to shipped title.</h1>
+      <p class="text-muted mt-3 max-w-xl text-sm sm:text-base">Unity game developer, 5 years. I make full games, gameplay systems, and living game AI: 2D action, survival, idle, party, and AR/VR. Every project below has a thumbnail + results.</p>
+      <div class="mt-4 flex flex-wrap gap-2 text-sm">
+        <a href="#works" class="bg-ink text-white px-5 py-3 rounded-full font-semibold">Explore 13 projects</a>
+        <a href="assets/cv.pdf" download class="bg-accent text-white px-5 py-3 rounded-full font-semibold">Download CV (PDF)</a>
+        <a href="https://wa.me/6282226551246" class="bg-white border border-line px-5 py-3 rounded-full font-semibold">Get an estimate</a>
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2 text-xs">
+        <a href="https://goldfire32.itch.io/" class="border border-line bg-white px-3 py-2 rounded-full">Itch.io</a>
+        <a href="https://www.linkedin.com/in/choirul32anwar" class="border border-line bg-white px-3 py-2 rounded-full">LinkedIn</a>
+        <a href="mailto:choirul32anwar@gmail.com" class="border border-line bg-white px-3 py-2 rounded-full">Email</a>
+      </div>
+      <div class="mt-4 flex gap-4 text-center text-sm">
+        <div><p class="font-bold text-xl"><span class="count" data-to="13" data-suffix="">13</span></p><p class="text-xs text-muted">games shipped / in dev</p></div>
+        <div class="w-px bg-line"></div>
+        <div><p class="font-bold text-xl"><span class="count" data-to="20" data-suffix="+">20+</span></p><p class="text-xs text-muted">AI behaviours built</p></div>
+        <div class="w-px bg-line"></div>
+        <div><p class="font-bold text-xl"><span class="count" data-to="5" data-suffix="">5</span></p><p class="text-xs text-muted">years, Unity/C#</p></div>
+      </div>
+    </div>
+    <div class="bg-card border border-line rounded-2xl p-3">
+      <div class="relative rounded-xl overflow-hidden bg-black">
+        <img src="assets/canva/p02_01.jpg" alt="Metanesia metaverse event thumbnail" class="w-full aspect-video object-cover" loading="eager" onerror="this.outerHTML='<p class=\'p-6 text-white text-sm\'>Thumbnail failed to load.</p>'" />
+        <span class="absolute top-2 left-2 text-[11px] font-bold bg-black/70 text-white px-2 py-1 rounded-full">FEATURED • GAME SHOWREEL</span>
+        <button data-play="https://www.youtube.com/embed/_vcEHNK6Iqo?autoplay=1" aria-label="Play showreel video" class="absolute inset-0 m-auto w-14 h-14 bg-white rounded-full grid place-items-center font-bold text-xl">▶</button>
+      </div>
+      <div class="flex gap-2 mt-3 overflow-x-auto strip pb-1">
+        <img src="assets/canva/p02_01.jpg" alt="Metanesia metaverse thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p02_03.jpg" alt="AR cultural map thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p02_02.jpg" alt="Excavator simulator thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p02_04.jpg" alt="UII maze thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p09_03.png" alt="Microbiology AR lab thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p10_06.jpg" alt="Gameplay prototype thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p11_01.jpg" alt="Shader study thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+        <img src="assets/canva/p08_06.png" alt="Pillow fight thumbnail" class="h-16 aspect-video object-cover rounded-lg border border-line" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <section id="works" class="pt-2 reveal">
+    <div class="flex flex-wrap items-end justify-between gap-2">
+      <h2 class="text-2xl font-bold">Project Gallery</h2>
+      <p id="count" class="text-xs text-muted" aria-live="polite">13 projects</p>
+    </div>
+    <div class="mt-3 bg-card border border-line rounded-2xl p-3 flex flex-wrap gap-2 text-sm sticky top-[57px] z-10">
+      <div role="group" aria-label="Filter by skill" class="flex flex-wrap gap-2">
+        <button data-k="semua" aria-pressed="true" class="fk px-3 py-1.5 rounded-full bg-ink text-white font-semibold">All</button>
+        <button data-k="game" aria-pressed="false" class="fk px-3 py-1.5 rounded-full border border-line bg-white">🎮 Game</button>
+        <button data-k="arvr" aria-pressed="false" class="fk px-3 py-1.5 rounded-full border border-line bg-white">🥽 AR/VR</button>
+        <button data-k="multiplayer" aria-pressed="false" class="fk px-3 py-1.5 rounded-full border border-line bg-white">🌐 Multiplayer</button>
+        <button data-k="rnd" aria-pressed="false" class="fk px-3 py-1.5 rounded-full border border-line bg-white">🧪 R&amp;D</button>
+      </div>
+      <span class="hidden sm:inline w-px bg-line mx-1"></span>
+      <div role="group" aria-label="Filter by platform" class="flex flex-wrap gap-2">
+        <button data-p="semua" aria-pressed="true" class="fp px-3 py-1.5 rounded-full bg-accent text-white font-semibold">All devices</button>
+        <button data-p="Android" aria-pressed="false" class="fp px-3 py-1.5 rounded-full border border-line bg-white">Android</button>
+        <button data-p="PC" aria-pressed="false" class="fp px-3 py-1.5 rounded-full border border-line bg-white">PC</button>
+        <button data-p="WebGL" aria-pressed="false" class="fp px-3 py-1.5 rounded-full border border-line bg-white">WebGL</button>
+      </div>
+    </div>
+
+    <div id="loading" class="hidden mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="skeleton h-64 rounded-2xl"></div><div class="skeleton h-64 rounded-2xl"></div><div class="skeleton h-64 rounded-2xl"></div>
+    </div>
+    <div id="grid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    <div id="empty" class="hidden mt-4 bg-white border border-dashed border-line rounded-2xl p-8 text-center">
+      <p class="font-bold">No thumbnails under this filter</p>
+      <p class="text-sm text-muted mt-1">Try another combination — or ask me, I can usually build it.</p>
+      <div class="mt-3 flex justify-center gap-2 text-sm">
+        <button id="reset" class="border border-line bg-white px-4 py-2 rounded-full font-semibold">Reset</button>
+        <a href="https://wa.me/6282226551246" class="bg-ink text-white px-4 py-2 rounded-full font-semibold inline-flex items-center">Ask on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="pt-12 reveal">
+    <div class="flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <h2 class="text-2xl font-bold">Experience — for Recruiters</h2>
+        <p class="text-sm text-muted mt-1">Real history from my CV: roles, teams, and measurable scope.</p>
+      </div>
+      <a href="assets/cv.pdf" download class="text-sm border border-line bg-white px-4 py-2 rounded-full font-semibold">Full CV (PDF)</a>
+    </div>
+    <ol class="mt-4 grid gap-3">
+      <li class="bg-card border border-line rounded-2xl p-4 grid sm:grid-cols-[150px_1fr] gap-3">
+        <div><p class="font-bold text-sm">2022 — 2024</p><p class="text-xs text-muted">Telkom Indonesia • Jakarta • Game Developer</p></div>
+        <div><p class="font-bold">Game Developer — Metaverse &amp; AR</p><p class="text-sm text-muted mt-1">Designed and maintained Metanesia metaverse (700+ simultaneous users, 10+ major events incl. Honda showroom, −30% physical event cost). Built Kemendikbud AR cultural map (+50% visitor learning) and Unjani AR education app. Programmed cutscene sensing for live events.</p><p class="text-xs mt-2 font-mono">Unity • C# • Photon Multiplayer • AR • Backend • Live events</p></div>
+      </li>
+      <li class="bg-card border border-line rounded-2xl p-4 grid sm:grid-cols-[150px_1fr] gap-3">
+        <div><p class="font-bold text-sm">2020 — 2022</p><p class="text-xs text-muted">Medify • Surabaya • Fullstack Web Dev</p></div>
+        <div><p class="font-bold">Fullstack Web Developer — Hospital Systems</p><p class="text-sm text-muted mt-1">Managed SIMRS backend + frontend across Surabaya hospitals (99.9% uptime). Built automated medical-record forms that cut doctors' data-entry time.</p><p class="text-xs mt-2 font-mono">Backend • API • Database • Server management</p></div>
+      </li>
+      <li class="bg-card border border-line rounded-2xl p-4 grid sm:grid-cols-[150px_1fr] gap-3">
+        <div><p class="font-bold text-sm">2019 — 2020</p><p class="text-xs text-muted">Pola Kreatif • Yogyakarta • Web + Game</p></div>
+        <div><p class="font-bold">Fullstack Web &amp; Game Developer</p><p class="text-sm text-muted mt-1">Conceptualized a skincare face-filter app, built an interactive invitation system with Laravel (+30% creation efficiency), and optimized an MIS (+40% data speed).</p><p class="text-xs mt-2 font-mono">Laravel • Game concepts • MIS optimization</p></div>
+      </li>
+      <li class="bg-card border border-line rounded-2xl p-4 grid sm:grid-cols-[150px_1fr] gap-3">
+        <div><p class="font-bold text-sm">2019</p><p class="text-xs text-muted">ARUTALA • Yogyakarta • Game Developer</p></div>
+        <div><p class="font-bold">Game Developer — VR Heavy-Machinery Sim</p><p class="text-sm text-muted mt-1">Built a near-realistic excavator VR training sim used by 200+ participants. Produced fire/spark particle VFX, user-object interaction, and optimized animations (+15% responsiveness).</p><p class="text-xs mt-2 font-mono">Unity • VR • Particles/VFX • Animation</p></div>
+      </li>
+    </ol>
+    <div class="mt-3 bg-card border border-line rounded-2xl p-4 text-sm grid sm:grid-cols-3 gap-3">
+      <div><b>Skills matrix</b><p class="text-muted text-xs mt-1">Unity 5 yrs • C# • VR/AR • Photon Multiplayer • Backend/API/DB • Git, Agile/Scrum.</p></div>
+      <div><b>Code sample</b><p class="text-muted text-xs mt-1">Ask via email — I'll send a tidy, commented gameplay or multiplayer repo.</p></div>
+      <div><b>Availability</b><p class="text-muted text-xs mt-1">Full-time / contract • Remote or onsite • ID + EN • choirul32anwar@gmail.com</p></div>
+    </div>
+  </section>
+
+  <section id="services" class="pt-12 pb-6 reveal">
+    <h2 class="text-2xl font-bold">Game Dev Services + How I Work</h2>
+    <p class="text-sm text-muted mt-1">Hire me to build your game — full title, systems, or AI.</p>
+    <div class="mt-3 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+      <div class="bg-card border border-line rounded-2xl overflow-hidden"><img src="https://i.ytimg.com/vi/z2ORykyH0fQ/hqdefault.jpg" alt="Full game development service" class="w-full aspect-[16/9] object-cover" loading="lazy" /><div class="p-4"><b>Full Game</b><p class="text-muted text-xs mt-1">2D action, survival, idle, party — idea to playable.</p></div></div>
+      <div class="bg-card border border-line rounded-2xl overflow-hidden"><img src="assets/canva/p04_03.png" alt="Gameplay systems service" class="w-full aspect-[16/9] object-cover" loading="lazy" /><div class="p-4"><b>Gameplay Systems</b><p class="text-muted text-xs mt-1">Combat, economy, progression, save systems.</p></div></div>
+      <div class="bg-card border border-line rounded-2xl overflow-hidden"><img src="assets/canva/p11_01.jpg" alt="Game AI service" class="w-full aspect-[16/9] object-cover" loading="lazy" /><div class="p-4"><b>Game AI &amp; Wildlife</b><p class="text-muted text-xs mt-1">Enemies, companions, ecosystems that feel alive.</p></div></div>
+      <div class="bg-card border border-line rounded-2xl overflow-hidden"><img src="assets/canva/p02_02.jpg" alt="AR VR game service" class="w-full aspect-[16/9] object-cover" loading="lazy" /><div class="p-4"><b>AR/VR Games</b><p class="text-muted text-xs mt-1">Education, training sims, expo experiences.</p></div></div>
+    </div>
+    <div class="mt-4 bg-ink text-white rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+      <p class="font-bold">Have a game to build? Send the brief — I reply with estimate + plan.</p>
+      <a href="https://wa.me/6282226551246?text=Hello%20Choirul,%20I%20saw%20your%20portfolio" class="bg-white text-ink px-5 py-3 rounded-full font-bold text-sm">Chat &amp; ask for a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line mt-4">
+  <div class="mx-auto max-w-6xl px-4 py-5 text-xs text-muted flex flex-col sm:flex-row justify-between gap-1">
+    <p>© 2026 Muhammad Choirul Anwar — Lampung, Indonesia</p><p>choirul32anwar@gmail.com • goldfire32.itch.io</p>
+  </div>
+</footer>
+
+<script src="data/projects.js"></script>
+<script>
+let fk='semua', fp='semua';
+const grid=document.getElementById('grid'), empty=document.getElementById('empty'),
+  loading=document.getElementById('loading'), count=document.getElementById('count');
+function render(){
+  loading.classList.remove('hidden'); grid.classList.add('hidden'); empty.classList.add('hidden');
+  setTimeout(()=>{
+    const l=PROJECTS.filter(x=>(fk==='semua'||x.k===fk)&&(fp==='semua'||x.p===fp));
+    loading.classList.add('hidden'); grid.classList.remove('hidden');
+    count.textContent=l.length+' projects';
+    if(!l.length){empty.classList.remove('hidden');grid.innerHTML='';return;}
+    grid.innerHTML=l.map((x,i)=>`
+    <article class="card enter bg-card border border-line rounded-2xl overflow-hidden" style="animation-delay:${i*0.06}s">
+      <div class="relative overflow-hidden bg-black">
+        <img src="${x.img}" alt="Thumbnail ${x.j}" class="thumb w-full aspect-video object-cover" loading="lazy" onerror="this.outerHTML='<p class=\'p-6 text-white text-xs\'>Thumbnail failed — details still below.</p>'" />
+        <span class="absolute top-2 left-2 text-[11px] font-bold bg-black/70 text-white px-2 py-1 rounded-full">${x.tag}</span>
+        <span class="absolute bottom-2 right-2 text-[11px] font-bold bg-white px-2 py-1 rounded-full">${x.p}</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[11px] font-bold text-accent">${klabel(x.k).toUpperCase()}</p>
+        <h3 class="font-bold">${x.j}</h3>
+        <p class="text-sm text-muted mt-0.5">${x.m}</p>
+        <p class="text-xs mt-1 font-mono">Role: ${x.r}</p>
+        <p class="text-xs font-mono text-muted">${x.t}</p>
+        <p class="text-xs font-bold mt-1 text-accent">${x.h}</p>
+        <a href="work.html?p=${x.slug}" class="inline-flex items-center mt-2 text-sm font-semibold py-1">See breakdown →</a>
+      </div>
+    </article>`).join('');
+  },180);
+}
+function sync(){document.querySelectorAll('.fk').forEach(b=>{const on=b.dataset.k===fk;b.setAttribute('aria-pressed',on);b.className='fk px-3 py-1.5 rounded-full '+(on?'bg-ink text-white font-semibold':'border border-line bg-white');});
+  document.querySelectorAll('.fp').forEach(b=>{const on=b.dataset.p===fp;b.className='fp px-3 py-1.5 rounded-full '+(on?'bg-accent text-white font-semibold':'border border-line bg-white');});}
+document.querySelectorAll('.fk').forEach(b=>b.addEventListener('click',()=>{fk=b.dataset.k;sync();render();}));
+document.querySelectorAll('.fp').forEach(b=>b.addEventListener('click',()=>{fp=b.dataset.p;sync();render();}));
+document.getElementById('reset').addEventListener('click',()=>{fk='semua';fp='semua';sync();render();});
+sync(); render();
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, to = +el.dataset.to, suf = el.dataset.suffix || '';
+  cio.unobserve(el);
+  if (reduced) { el.textContent = to + suf; return; }
+  const t0 = performance.now(), dur = 900;
+  (function tick(t) {
+    const p = Math.min((t - t0) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(to * ease) + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+}), { threshold: 0.6 });
+document.querySelectorAll('.count').forEach(el => cio.observe(el));
+
+const lb = document.createElement('div');
+lb.id = 'lightbox';
+lb.className = 'hide fixed inset-0 z-50 bg-black/80 grid place-items-center p-4';
+lb.setAttribute('role', 'dialog');
+lb.setAttribute('aria-modal', 'true');
+lb.setAttribute('aria-label', 'Video player');
+lb.innerHTML = '<div class="box w-full max-w-3xl bg-black rounded-2xl overflow-hidden"><div class="aspect-video"><iframe class="h-full w-full" title="Showreel video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><button id="lb-close" class="w-full bg-white text-sm font-bold py-3">Close ✕</button></div>';
+document.body.appendChild(lb);
+const frame = lb.querySelector('iframe');
+let lastFocus = null;
+function openLb(src) { lastFocus = document.activeElement; frame.src = src; lb.classList.remove('hide'); document.getElementById('lb-close').focus(); }
+function closeLb() { frame.src = ''; lb.classList.add('hide'); if (lastFocus) lastFocus.focus(); }
+document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => openLb(b.dataset.play)));
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+lb.querySelector('#lb-close').addEventListener('click', closeLb);
+addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.classList.contains('hide')) closeLb(); });
+</script>
+</body>
+</html>
